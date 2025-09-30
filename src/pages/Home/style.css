@@ -1,0 +1,38 @@
+.filmes-container {
+    width: 80%;
+    margin-top: 20px;
+}
+
+.filme {
+    width: 100%;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: row;
+}
+
+.filme .info {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.filme .info p{
+    flex: 1;
+}
+
+.filme .info a{
+    text-decoration: none;
+    color: white;
+    background-color: #E50914;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.filme img{
+    width: 300px;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+}
