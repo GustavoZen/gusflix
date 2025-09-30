@@ -1,13 +1,15 @@
 import {useEffect, useState} from 'react';
 import {Link} from 'react-router-dom';
-import api from '../../services/api';
+import api, {imageUrl} from '../../services/api';
 import './style.css';
 
 function Home(){
 
     const [filmes, setFilmes] = useState([]);
+    const [carregando, setCarregando] = useState(true);
 
     useEffect(() => {
+        setCarregando(true);    
         async function loadFilmes(){
             const response = await api.get('movie/now_playing', {
                 params: {
@@ -17,12 +19,18 @@ function Home(){
                 }
             })
             setFilmes(response.data.results);
+            setCarregando(false);
         };
         loadFilmes();
     }, [] )
 
-    const imageUrl = 'https://image.tmdb.org/t/p/original/'
-
+    if(carregando){
+        return(
+            <div className='loading'>
+                <h2>Carregando filmes...</h2>
+            </div>
+        )
+    }
     return(
         <div className='App'>
             <h1>Página Inicial</h1>
