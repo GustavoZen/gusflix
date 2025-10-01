@@ -16,6 +16,7 @@ function Filme(){
             })
             .then((res)=>{
                 setFilme(res.data);
+                console.log(res.data);
             })
             .catch((e)=>{
                 console.log("Erro: " + e);
@@ -27,6 +28,9 @@ function Filme(){
     return(
         <div>
             <h1>Página do Filme</h1>
+            <div className='filme'>
+                <img src = {`${imageUrl}${filme.backdrop_path}`}/>
+            </div>
         </div>
     );
 }

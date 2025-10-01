@@ -20,6 +20,10 @@
     flex: 1;
 }
 
+.filme .info h1{
+    text-align: center;
+}
+
 .filme .info a{
     text-decoration: none;
     color: white;

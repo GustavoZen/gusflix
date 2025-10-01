@@ -33,7 +33,6 @@ function Home(){
     }
     return(
         <div className='App'>
-            <h1>Página Inicial</h1>
             <div className='filmes-container'>
                 {filmes.slice(0,10).map(filme => {
                     return(
