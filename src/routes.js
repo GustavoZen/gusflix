@@ -3,6 +3,7 @@ import Home from './pages/Home';
 import Filme from './pages/Filme';
 import Header from './components/Header';
 import Favoritos from './pages/Favoritos';
+import {ToastContainer, Bounce} from 'react-toastify';
 
 function AppRoutes(){
     return(
@@ -15,6 +16,19 @@ function AppRoutes(){
 
                 <Route path="*" element={<h1>404</h1>}/>
             </Routes>
+            <ToastContainer
+            position="bottom-right"
+            autoClose={3000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick={false}
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="dark"
+            transition={Bounce}
+            />
         </BrowserRouter>
     );
 }
